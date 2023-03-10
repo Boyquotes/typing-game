@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyf1dwwrjubkr"]
+
+[ext_resource type="Script" path="res://Background.gd" id="1_uafht"]
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uafht")
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelBackground" type="Panel" parent="Background"]
+layout_mode = 0
+anchor_left = 0.3125
+anchor_top = 0.316358
+anchor_right = 0.667535
+anchor_bottom = 0.472222
+metadata/_edit_use_anchors_ = true
+
+[node name="DisplayMessage" type="Label" parent="Background/LabelBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "One Lone Coder
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextInput" type="LineEdit" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3125
+anchor_top = 0.572531
+anchor_right = 0.667535
+anchor_bottom = 0.652778
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="IncorrectLabel" type="Panel" parent="Background"]
+layout_mode = 0
+anchor_left = 0.230903
+anchor_top = 0.753086
+anchor_right = 0.387153
+anchor_bottom = 0.83642
+offset_top = -3.05176e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="IncorrectDisplay" type="Label" parent="Background/IncorrectLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Incorrect: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CorrectLabel" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.612847
+anchor_top = 0.753086
+anchor_right = 0.769097
+anchor_bottom = 0.83642
+offset_top = -3.05176e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="CorrectDisplay" type="Label" parent="Background/CorrectLabel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Correct: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="text_submitted" from="Background/TextInput" to="Background" method="_on_text_input_text_submitted"]
